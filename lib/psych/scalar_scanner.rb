@@ -110,7 +110,7 @@ module Psych
       klass = class_loader.load 'Time'
 
       date, time = *(string.split(/[ tT]/, 2))
-      (yy, m, dd) = date.match(/^(-?\d{*})-(\d{1,2})-(\d{1,2})/).captures.map { |x| x.to_i }
+      (yy, m, dd) = date.match(/^(-?\d*)-(\d{1,2})-(\d{1,2})/).captures.map { |x| x.to_i }
       md = time.match(/(\d+:\d+:\d+)(?:\.(\d*))?\s*(Z|[-+]\d+(:\d\d)?)?/)
 
       (hh, mm, ss) = md[1].split(':').map { |x| x.to_i }
